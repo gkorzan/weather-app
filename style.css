@@ -18,3 +18,41 @@ body {
     margin: 1em;
     backdrop-filter: blur(10px);
 }
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    margin: 1em;
+    border-radius: 50%;
+    border: none;
+    height: 3.5em;
+    width: 3.5em;
+    background: #7c7c7c2b;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+img.search-button {
+    width: 1.5em; 
+    filter: invert(50%);
+}
+
+button:hover {
+    background: #7c7c7c6b;
+}
+
+input.search-bar {
+    border: none;
+    outline: none;
+    padding: 0.5em 1em;
+    border-radius: 1em;
+    background: #7c7c7c2b;
+    color: wheat;
+    font-family: inherit;
+    font-size: 1.2em;
+    width: calc(100% - 6em);
+}

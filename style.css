@@ -6,12 +6,15 @@ body {
     margin: 0;
     background: #222;
     font-family: 'Open Sans', sans-serif;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
 }
 
 .card {
-    background: #000000d0;
+    background: rgba(0,0,0,0.8);;
     color: wheat;
     padding: 2em;
     border-radius: 2em;
     margin: 1em;
+    backdrop-filter: blur(10px);
 }

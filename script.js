@@ -45,5 +45,10 @@ setGradientBackground = (temprature, humidity) => {
 
 window.onload = () => {
     weather.fetchWeather('Saint Petersburg')
-  // setGradientBackground(30, 0.5);
+    document.querySelector('.search').addEventListener('submit', (e) => {
+        const city = document.querySelector(".search-bar").value;
+        document.querySelector(".search-bar").value = '';
+        weather.fetchWeather(city);
+        e.preventDefault();
+    });
 };

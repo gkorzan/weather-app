@@ -3,14 +3,23 @@ const weather = {
     async fetchWeather(city) {
       const response = await (
         await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${this.apiKey}`
+          `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${this.apiKey}&units=metric`
         )
       ).json();
-      console.log(response);
       this.displayData(response);
     },
     displayData(data) {
-        
+        const { name } = data;
+        const { temp, humidity } = data.main;
+        const { description, icon } = data.weather[0];
+        const { speed: windSpeed } = data.wind; // meter per second
+        console.log(name, Math.floor(temp), humidity, description, windSpeed);
+        document.querySelector('.city').innerText = `Weather in ${name}`;
+        document.querySelector('.temp').innerText = `${Math.floor(temp)} °C`;
+        document.querySelector('.description').innerText = description;
+        document.querySelector('.icon').src = `https://openweathermap.org/img/wn/${icon}.png`;
+        document.querySelector('.humidity').innerText = `Humidity: ${humidity}%`;
+        document.querySelector('.wind').innerText = `Wind speed: ${windSpeed} m/s`
     },
   };
 
@@ -35,5 +44,6 @@ setGradientBackground = (temprature, humidity) => {
 };
 
 window.onload = () => {
+    weather.fetchWeather('Saint Petersburg')
   // setGradientBackground(30, 0.5);
 };

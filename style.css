@@ -20,6 +20,16 @@ body {
     backdrop-filter: blur(10px);
 }
 
+.description:first-letter {
+    text-transform: uppercase;
+}
+
+.clouds-description {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
 .search {
     display: flex;
     align-items: center;

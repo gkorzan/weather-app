@@ -1,3 +1,19 @@
+const weather = {
+    apiKey: "549fc3578e80926e9ad7c54dbda6e194",
+    async fetchWeather(city) {
+      const response = await (
+        await fetch(
+          `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${this.apiKey}`
+        )
+      ).json();
+      console.log(response);
+      this.displayData(response);
+    },
+    displayData(data) {
+        
+    },
+  };
+
 setGradientBackground = (temprature, humidity) => {
   const TEMP_AMPLITUDE = 30;
   const MAX_COLOR_CHANAL_VALUE = 255;

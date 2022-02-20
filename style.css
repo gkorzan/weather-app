@@ -68,6 +68,10 @@ input.search-bar {
     width: calc(100% - 6em);
 }
 
+input.search-bar.invalid {
+    background-color: coral;
+}
+
 h1.temp {
     margin: 0;
 }

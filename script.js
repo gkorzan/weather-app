@@ -1,12 +1,13 @@
 const weather = {
     apiKey: "549fc3578e80926e9ad7c54dbda6e194",
     async fetchWeather(city) {
-      const response = await (
-        await fetch(
+      const response = await fetch(
           `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${this.apiKey}&units=metric`
         )
-      ).json();
-      this.displayData(response);
+      if (!response.ok) {
+          throw new Error("Data fetch error");
+      }
+      this.displayData(await response.json());
     },
     displayData(data) {
         const { name } = data;
@@ -20,6 +21,7 @@ const weather = {
         document.querySelector('.icon').src = `https://openweathermap.org/img/wn/${icon}.png`;
         document.querySelector('.humidity').innerText = `Humidity: ${humidity}%`;
         document.querySelector('.wind').innerText = `Wind speed: ${windSpeed} m/s`
+        setGradientBackground(temp, humidity/100);
     },
   };
 
@@ -27,7 +29,7 @@ setGradientBackground = (temprature, humidity) => {
   const TEMP_AMPLITUDE = 30;
   const MAX_COLOR_CHANAL_VALUE = 255;
 
-  const gHumidity = humidity * MAX_COLOR_CHANAL_VALUE;
+  const gHumidity = MAX_COLOR_CHANAL_VALUE - humidity * MAX_COLOR_CHANAL_VALUE;
   if (Math.abs(temprature) > TEMP_AMPLITUDE) {
     temprature = TEMP_AMPLITUDE;
   }
@@ -45,10 +47,20 @@ setGradientBackground = (temprature, humidity) => {
 
 window.onload = () => {
     weather.fetchWeather('Saint Petersburg')
+
     document.querySelector('.search').addEventListener('submit', (e) => {
         const city = document.querySelector(".search-bar").value;
         document.querySelector(".search-bar").value = '';
-        weather.fetchWeather(city);
+
+        weather.fetchWeather(city).catch(() => {
+            document.querySelector(".search-bar").classList.add("invalid");
+        });
         e.preventDefault();
+    });
+
+    document.querySelector('.search-bar').addEventListener('input', () => {
+        const searchBar = document.querySelector(".search-bar");
+        if (searchBar.classList.contains('invalid'))
+            searchBar.classList.remove("invalid");
     });
 };

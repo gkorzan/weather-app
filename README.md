@@ -1,5 +1,7 @@
 <div align="center">
-<img src="https://github.com/gkorzan/weather-app/blob/main/banner.png" align="center" alt="Simple Weather">
+<a href="https://gkorzan.github.io/weather-app/">
+  <img src="https://github.com/gkorzan/weather-app/blob/main/banner.png" align="center" alt="Simple Weather">
+</a>
 
 ---
 

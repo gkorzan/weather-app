@@ -1,37 +1,26 @@
-## Welcome to GitHub Pages
+<div align="center">
+<img src="https://github.com/gkorzan/weather-app/blob/main/banner.png" align="center" alt="Simple Weather">
 
-You can use the [editor on GitHub](https://github.com/gkorzan/weather-app/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+---
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+![LinkedIn](https://img.shields.io/github/languages/top/gkorzan/weather-app?style=for-the-badge) [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/gleb-korzan-4654081a4/) [![build](https://img.shields.io/badge/-Click%20to%20test%20it-green?style=for-the-badge)](https://gkorzan.github.io/weather-app/)
 
-### Markdown
+---
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+![GIF demo](https://github.com/gkorzan/weather-app/blob/main/weather_presentation.gif)
+</div>
 
-```markdown
-Syntax highlighted code block
+**Description**
+---
+Simple weather app written in HTML, CSS, and JavaScript using the OpenWeather API for fetching weather and geolocation information.
 
-# Header 1
-## Header 2
-### Header 3
+**Acknowledgements**
+---
 
-- Bulleted
-- List
++ [@ilyamore88](https://github.com/ilyamore88) for UI design assistance.
++ [@darina-trotskaya](https://github.com/darina-trotskaya) for being supportive.
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/gkorzan/weather-app/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+**License**
+---
+The Weather-App is licensed under the terms of the GPL Open Source license and is available for free.
